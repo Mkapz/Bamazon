@@ -28,7 +28,7 @@ function PromptProduct(){
 		console.log("------------------");
 
 		for(i=0; i<res.length; i++){
-			console.log('Item ID:' + res[i].id + 'Product Name: ' + res[i].ProductName + 'Price: ' + '$' + res[i].Price + 'Avaiable' + res[i].StockQuantity)
+			console.log('Item ID:' + res[i].id + 'Product Name: ' + res[i].ProductName + 'Price: ' + '$' + res[i].Price + 'Avaiable' + res[i].StockQuantity);
 		}
 		order();		
 	})
@@ -54,12 +54,12 @@ function order(){
 				console.log("Order canceled");
 				nextOrder();
 			}else{
-				PricePay= res[0].Price * answer.StockQuantity;
-				currentDepartment= res[0].DepartmentName * answer.DepartmentName;
+				PricePay= res[0].Price * toBuy.StockQuantity;
+				currentDepartment= res[0].DepartmentName * toBuy.DepartmentName;
 				console.log("thank you for ordering")
 				console.log("you owe $" + PricePay);
 				connection.query('UPDATE products SET ? WHERE ?' , [{
-					StockQuantity: res[0].StockQuantity - answer.StockQuantity
+					StockQuantity: res[0].StockQuantity - toBuy.StockQuantity
 				nextOrder();
 				};
 
