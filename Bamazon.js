@@ -39,13 +39,12 @@ function order(){
 		type: 'input',
 		message: 'please input the ID of the product you want',
 		name: 'id'
-	},
-	{
+	},{
 		type: 'input',
 		message: 'how many would you like to buy?',
 		name: "StockQuantity"
 
-	}
+	},
 	]).then(function (toBuy){
 		var quantity= toBuy.StockQuantity;
 		var ItemID= toBuy.id;
@@ -80,4 +79,5 @@ function nextOrder(){
 	})
 };
 
+PromptProduct();
 		
